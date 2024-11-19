@@ -1,9 +1,9 @@
 <?php
 // Koneksi ke database (sesuaikan dengan pengaturan database Anda)
-$host = '35.219.47.204'; // Alamat server
-$username = 'root'; // Username database
-$password = 'root12345'; // Password database
-$dbname = 'experimental001'; // Nama database yang ingin diakses
+$host = 'mysql-poc-db.apps.ocp-gcp-poc.poctestingocp.com'; // Alamat server
+$username = 'adminpoc'; // Username database
+$password = 'adminpoc123'; // Password database
+$dbname = 'pocdb'; // Nama database yang ingin diakses
 
 // Membuat koneksi
 $conn = new mysqli($host, $username, $password, $dbname);
