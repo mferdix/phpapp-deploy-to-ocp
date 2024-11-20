@@ -1,6 +1,12 @@
 <?php
+// <<<<<<< dev-yudha
+// // // Koneksi ke database (sesuaikan dengan pengaturan database Anda)
+// // $host = 'mysql-poc-db.apps.ocp-gcp-poc.poctestingocp.com'; // Alamat server
+// =======
 // // Koneksi ke database (sesuaikan dengan pengaturan database Anda)
-// $host = 'mysql-poc-db.apps.ocp-gcp-poc.poctestingocp.com'; // Alamat server
+// //$host = 'mysql-poc-db.apps.ocp-gcp-poc.poctestingocp.com'; // Alamat server
+// // $host = '10.125.131.226'; 
+// >>>>>>> main
 // $username = 'adminpoc'; // Username database
 // $password = 'adminpoc123'; // Password database
 // $dbname = 'pocdb'; // Nama database yang ingin diakses
