@@ -1,18 +1,36 @@
 <?php
-// Koneksi ke database (sesuaikan dengan pengaturan database Anda)
-//$host = 'mysql-poc-db.apps.ocp-gcp-poc.poctestingocp.com'; // Alamat server
-// $host = '10.125.131.226'; 
+// <<<<<<< dev-yudha
+// // // Koneksi ke database (sesuaikan dengan pengaturan database Anda)
+// // $host = 'mysql-poc-db.apps.ocp-gcp-poc.poctestingocp.com'; // Alamat server
+// =======
+// // Koneksi ke database (sesuaikan dengan pengaturan database Anda)
+// //$host = 'mysql-poc-db.apps.ocp-gcp-poc.poctestingocp.com'; // Alamat server
+// // $host = '10.125.131.226'; 
+// >>>>>>> main
 // $username = 'adminpoc'; // Username database
 // $password = 'adminpoc123'; // Password database
 // $dbname = 'pocdb'; // Nama database yang ingin diakses
 
-// Membuat koneksi
-$conn = new mysqli($host, $username, $password, $dbname);
+$dbhost = getenv("MYSQL_SERVICE_HOST");
+$dbuser = getenv("MYSQL_USER");
+$pwd = getenv("MYSQL_PASSWORD");
+$dbname = getenv("MYSQL_DATABASE");
 
-// Mengecek koneksi
+// Create connection
+$conn = new mysqli($dbhost, $dbuser, $pwd, $dbname);
+
+// Check connection
 if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+    die("Connection failed. Please make sure you have the MYSQL_SERVICE_HOST, MYSQL_USER, MYSQL_PASSWORD, and MYSQL_DATABASE environment variables : " . $conn->connect_error);
 }
+
+// // Membuat koneksi
+// $conn = new mysqli($host, $username, $password, $dbname);
+
+// // Mengecek koneksi
+// if ($conn->connect_error) {
+//     die("Koneksi gagal: " . $conn->connect_error);
+// }
 
 // Memeriksa apakah form sudah disubmit
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
